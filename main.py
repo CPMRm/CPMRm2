@@ -162,7 +162,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33", "34"]
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33"]
             print(Colorate.Horizontal(Colors.rainbow, '{01}: 增加綠鈔                 1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{02}: 增加C幣                  4.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{03}: 皇冠等級                 8K'))
@@ -196,7 +196,6 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{31}: 修改車里程數       2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{32}: 修改車輛煞車         2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{33}: 更改目前遊戲帳號綁定的Gmail      2K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{34}: 解鎖豐田皇冠車      2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
@@ -733,19 +732,6 @@ if __name__ == "__main__":
                 else:
                     console.print("\n[bold red]FAILED[/bold red]")
                     console.print("[bold]EMAIL IS ALREADY REGISTERED[/bold]")
-                    sleep(2)
-                    continue
-            elif service == 34: # Unlock Crown
-                console.print("[%] Unlocking Toyota Crown: ", end=None)
-                if cpm.unlock_crown():
-                    print(Colorate.Horizontal(Colors.rainbow, 'SUCCESSFUL'))
-                    print(Colorate.Horizontal(Colors.rainbow, '======================================'))
-                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
-                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channe: @{__CHANNEL_USERNAME__}.'))
-                    else: continue
-                else:
-                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
-                    print(Colorate.Horizontal(Colors.rainbow, 'Please try again.'))
                     sleep(2)
                     continue
             else: continue
