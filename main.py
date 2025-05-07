@@ -162,7 +162,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28"]
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33", "34"]
             print(Colorate.Horizontal(Colors.rainbow, '{01}: 增加綠鈔                 1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{02}: 增加C幣                  4.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{03}: 皇冠等級                 8K'))
@@ -191,6 +191,12 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{26}: 複製帳號                 7K'))
             print(Colorate.Horizontal(Colors.rainbow, '{27}: 秒車                     2.5k'))
             print(Colorate.Horizontal(Colors.rainbow, '{28}: 自訂轉向角               1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{29}: 自訂 HP                2.5K')) 
+            print(Colorate.Horizontal(Colors.rainbow, '{30}: 輪胎燃燒程度                1.5K')) 
+            print(Colorate.Horizontal(Colors.rainbow, '{31}: 修改車里程數       2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{32}: 修改車輛煞車         2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{33}: 更改目前遊戲帳號綁定的Gmail      2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{34}: 解鎖豐田皇冠車      2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
@@ -608,7 +614,7 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
                     sleep(2)
                     continue
-            elif service == 27:
+            elif service == 27: #秒車
                 console.print("[bold yellow][!] Note[/bold yellow]: original speed can not be restored!.")
                 console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")
                 car_id = IntPrompt.ask("[bold][?] Car Id[/bold]")
@@ -639,7 +645,109 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, 'FAILED'))
                     print(Colorate.Horizontal(Colors.rainbow, 'PLEASE TRY AGAIN'))
                     sleep(2)
-                    continue                                        
+                    continue 
+            elif service == 29: # 自訂HP
+                console.print("[bold yellow][!] Note[/bold yellow]: original speed can not be restored!.")
+                console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")
+                car_id = IntPrompt.ask("[bold][?] Car Id[/bold]")
+                new_hp = IntPrompt.ask("[bold][?]Enter New HP[/bold]")
+                new_inner_hp = IntPrompt.ask("[bold][?]Enter New Inner Hp[/bold]")
+                new_nm = IntPrompt.ask("[bold][?]Enter New NM[/bold]")
+                new_torque = IntPrompt.ask("[bold][?]Enter New Torque[/bold]")
+                console.print("[bold cyan][%] Hacking Car Speed[/bold cyan]:",end=None)
+                if cpm.hack_car_speed(car_id, new_hp, new_inner_hp, new_nm, new_torque):
+                    console.print("[bold green]SUCCESFUL (✔)[/bold green]")
+                    console.print("================================")
+                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channe: @{__CHANNEL_USERNAME__}.'))
+                    else: continue
+                else:
+                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
+                    print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
+                    sleep(2)
+                    continue
+            elif service == 30: # 輪胎燃燒
+                print(Colorate.Horizontal(Colors.rainbow, '[!] ENTER CAR DETALIS'))
+                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
+                print(Colorate.Horizontal(Colors.rainbow, '[!] ENTER PERCENTAGE'))
+                custom = IntPrompt.ask("[pink][?]﻿ENTER PERCENTAGE TIRES U WANT[/pink]")                
+                console.print("[red][%] Setting Percentage [/red]: ", end=None)
+                if cpm.max_max2(car_id, custom):
+                    print(Colorate.Horizontal(Colors.rainbow, 'SUCCESSFUL'))
+                    answ = Prompt.ask("[bold green][?] DO YOU WANT TO EXIT[/bold green] ?", choices=["y", "n"], default="n")
+                    if answ == "y": console.print("THANK YOU FOR USING OUR TOOL")
+                    else: continue
+                else:
+                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED'))
+                    print(Colorate.Horizontal(Colors.rainbow, 'PLEASE TRY AGAIN'))
+                    sleep(2)
+                    continue
+            elif service == 31: # 里程數
+                console.print("[bold]ENTER CAR DETAILS![/bold]")
+                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
+                console.print("[bold]ENTER NEW MILLAGE![/bold]")
+                custom = IntPrompt.ask("[bold blue][?]﻿ENTER MILLAGE U WANT[/bold blue]")                
+                console.print("[bold red][%] Setting Percentage [/bold red]: ", end=None)
+                if cpm.millage_car(car_id, custom):
+                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    answ = Prompt.ask("[bold][?] DO YOU WANT TO EXIT[/bold] ?", choices=["y", "n"], default="n")
+                    if answ == "y": console.print("THANK YOU FOR USING OUR TOOL")
+                    else: continue
+                else:
+                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED'))
+                    print(Colorate.Horizontal(Colors.rainbow, 'PLEASE TRY AGAIN'))
+                    sleep(2)
+                    continue
+            elif service == 32: # 煞車
+                console.print("[bold]ENTER CAR DETAILS![/bold]")
+                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
+                console.print("[bold]ENTER NEW BRAKE![/bold]")
+                custom = IntPrompt.ask("[bold blue][?]﻿ENTER BRAKE U WANT[/bold blue]")                
+                console.print("[bold red][%] Setting BRAKE [/bold red]: ", end=None)
+                if cpm.brake_car(car_id, custom):
+                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    answ = Prompt.ask("[bold][?] DO YOU WANT TO EXIT[/bold] ?", choices=["y", "n"], default="n")
+                    if answ == "y": console.print("THANK YOU FOR USING OUR TOOL")
+                    else: continue
+                else:
+                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED'))
+                    print(Colorate.Horizontal(Colors.rainbow, 'PLEASE TRY AGAIN'))
+                    sleep(2)
+                    continue
+            elif service == 33:
+                console.print("[bold]Enter New Email![/bold]")
+                new_email = prompt_valid_value("[bold cyan][?] Account New Email[/bold cyan]", "Email", password=False)
+                console.print(
+                      "[bold red]C[/bold red][bold dark_orange]H[/bold dark_orange][bold yellow]A[/bold yellow]"
+                      "[bold green]N[/bold green][bold cyan]G[/bold cyan][bold blue]I[/bold blue]"
+                      "[bold magenta]N[/bold magenta][bold violet]G[/bold violet] "
+                      "[bold red]E[/bold red][bold dark_orange]M[/bold dark_orange][bold yellow]A[/bold yellow]"
+                      "[bold green]I[/bold green][bold cyan]L[/bold cyan][bold blue].[/bold blue]"
+                      "[bold magenta].[/bold magenta][bold violet].[/bold violet]",
+                       end="")
+                if cpm.change_email(new_email):
+                    console.print("\n[bold green]SUCCESSFUL (✔)[/bold green]")
+                    answ = Prompt.ask("[bold][?] DO YOU WANT TO EXIT[/bold] ?", choices=["y", "n"], default="n")
+                    if answ == "y": console.print("[bold]Thank You for using our tool[/bold]")
+                    else: continue            
+                else:
+                    console.print("\n[bold red]FAILED[/bold red]")
+                    console.print("[bold]EMAIL IS ALREADY REGISTERED[/bold]")
+                    sleep(2)
+                    continue
+            elif service == 34: # Unlock Crown
+                console.print("[%] Unlocking Toyota Crown: ", end=None)
+                if cpm.unlock_crown():
+                    print(Colorate.Horizontal(Colors.rainbow, 'SUCCESSFUL'))
+                    print(Colorate.Horizontal(Colors.rainbow, '======================================'))
+                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channe: @{__CHANNEL_USERNAME__}.'))
+                    else: continue
+                else:
+                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
+                    print(Colorate.Horizontal(Colors.rainbow, 'Please try again.'))
+                    sleep(2)
+                    continue
             else: continue
             break
         break
