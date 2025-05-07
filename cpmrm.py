@@ -278,16 +278,6 @@ class CPMRm:
         response = requests.post(f"{__ENDPOINT_URL__}/unlock_equipments_female", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
-
-    def hack_car_speed(self, car_id):
-        payload = {
-            "account_auth": self.auth_token,
-            "car_id": car_id
-        }
-        params = { "key": self.access_key }
-        response = requests.post(f"{__ENDPOINT_URL__}/hack_car_speed", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok")
     
     def unlock_animations(self) -> bool:
         payload = { "account_auth": self.auth_token }
@@ -295,7 +285,21 @@ class CPMRm:
         response = requests.post(f"{__ENDPOINT_URL__}/unlock_animations", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
-
+   
+    def hack_car_speed(self, car_id, new_hp, new_inner_hp, new_nm, new_torque):
+        payload = {
+            "account_auth": self.auth_token,
+            "car_id": car_id,
+            "new_hp": new_hp,
+            "new_inner_hp": new_inner_hp,
+            "new_nm": new_nm,
+            "new_torque": new_torque,
+        }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/hack_car_speed", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
     def max_max1(self, car_id, custom):
         payload = {
         "account_auth": self.auth_token,
@@ -340,3 +344,11 @@ class CPMRm:
         response = requests.post(f"{__ENDPOINT_URL__}/brake_car", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
+        
+   def unlock_crown(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_crown", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+   
