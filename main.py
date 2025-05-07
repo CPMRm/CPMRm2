@@ -189,7 +189,7 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{24}: 更改勝利場次             1K'))
             print(Colorate.Horizontal(Colors.rainbow, '{25}: 更改輸場次               1K'))
             print(Colorate.Horizontal(Colors.rainbow, '{26}: 複製帳號                 7K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{27}: 秒車                     2.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{27}: 請勿使用                     2.5k'))
             print(Colorate.Horizontal(Colors.rainbow, '{28}: 自訂轉向角               1.5k'))
             print(Colorate.Horizontal(Colors.rainbow, '{29}: 自訂 HP                  2.5K')) 
             print(Colorate.Horizontal(Colors.rainbow, '{30}: 輪胎燃燒程度             1.5K')) 
