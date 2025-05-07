@@ -191,16 +191,16 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{26}: 複製帳號                 7K'))
             print(Colorate.Horizontal(Colors.rainbow, '{27}: 秒車                     2.5k'))
             print(Colorate.Horizontal(Colors.rainbow, '{28}: 自訂轉向角               1.5k'))
-            print(Colorate.Horizontal(Colors.rainbow, '{29}: 自訂 HP                2.5K')) 
-            print(Colorate.Horizontal(Colors.rainbow, '{30}: 輪胎燃燒程度                1.5K')) 
-            print(Colorate.Horizontal(Colors.rainbow, '{31}: 修改車里程數       2K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{32}: 修改車輛煞車         2K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{33}: 更改目前遊戲帳號綁定的Gmail      2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{29}: 自訂 HP                 2.5K')) 
+            print(Colorate.Horizontal(Colors.rainbow, '{30}: 輪胎燃燒程度             1.5K')) 
+            print(Colorate.Horizontal(Colors.rainbow, '{31}: 修改車里程數             2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{32}: 修改車輛煞車             2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{33}: 更改目前遊戲帳號綁定的Gmail 2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
             
-            service = IntPrompt.ask(f"[bold][?] Select a Service [red][1-{choices[-1]} or 0][/red][/bold]", choices=choices, show_choices=False)
+            service = IntPrompt.ask(f"[bold][?] 選擇一個服務 [red][1-{choices[-1]} or 0][/red][/bold]", choices=choices, show_choices=False)
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
             
