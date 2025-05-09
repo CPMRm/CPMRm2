@@ -665,7 +665,7 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
                     sleep(2)
                     continue
-            elif service == : # 輪胎燃燒
+            elif service == 33: # 輪胎燃燒
                 print(Colorate.Horizontal(Colors.rainbow, '[!] ENTER CAR DETALIS'))
                 car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
                 print(Colorate.Horizontal(Colors.rainbow, '[!] ENTER PERCENTAGE'))
