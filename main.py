@@ -39,7 +39,7 @@ def gradient_text(text, colors):
 
 def banner(console):
     os.system('cls' if os.name == 'nt' else 'clear')
-    brand_name =  "Car Parking Multiplayer 1 Tool - @ryderchang666"
+    brand_name =  "Car Parking Multiplayer 1 RMSTUDIO Tool - @ryderchang666"
     colors = [
         "rgb(255,0,0)", "rgb(255,69,0)", "rgb(255,140,0)", "rgb(255,215,0)", "rgb(173,255,47)", 
         "rgb(0,255,0)", "rgb(0,255,255)", "rgb(0,191,255)", "rgb(0,0,255)", "rgb(139,0,255)",
@@ -48,8 +48,8 @@ def banner(console):
     colorful_text = gradient_text(brand_name, colors)
     console.print(colorful_text)
     print(Colorate.Horizontal(Colors.rainbow, '=================================================================='))
-    print(Colorate.Horizontal(Colors.rainbow, '\t         𝐏𝐋𝐄𝐀𝐒𝐄 𝐋𝐎𝐆𝐎𝐔𝐓 𝐅𝐑𝐎𝐌 𝐂𝐏𝐌 𝐁𝐄𝐅𝐎𝐑𝐄 𝐔𝐒𝐈𝐍𝐆 𝐓𝐇𝐈𝐒 𝐓𝐎𝐎𝐋'))
-    print(Colorate.Horizontal(Colors.rainbow, '    𝐒𝐇𝐀𝐑𝐈𝐍𝐆 𝐓𝐇𝐄 𝐀𝐂𝐂𝐄𝐒𝐒 𝐊𝐄𝐘 𝐈𝐒 𝐍𝐎𝐓 𝐀𝐋𝐋𝐎𝐖𝐄𝐃 𝐀𝐍𝐃 𝐖𝐈𝐋𝐋 𝐁𝐄 𝐁𝐋𝐎𝐂𝐊𝐄𝐃'))
+    print(Colorate.Horizontal(Colors.rainbow, '\t         在帳號登入腳本前請先在CPM1登出帳號'))
+    print(Colorate.Horizontal(Colors.rainbow, '    密鑰僅可在一個裝置登入使用 分享密鑰不被允許'))
     print(Colorate.Horizontal(Colors.rainbow, f' ‌           𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦: @{__CHANNEL_USERNAME__} 𝐎𝐫 @{__GROUP_USERNAME__}'))
     print(Colorate.Horizontal(Colors.rainbow, '=================================================================='))
 
@@ -61,13 +61,13 @@ def load_player_data(cpm):
         
             print(Colorate.Horizontal(Colors.rainbow, '==========[ PLAYER DETAILS ]=========='))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Name   : {(data.get("Name") if "Name" in data else "UNDEFINED")}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'名字   : {(data.get("Name") if "Name" in data else "UNDEFINED")}.'))
                 
-            print(Colorate.Horizontal(Colors.rainbow, f'LocalID: {data.get("localID")}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'帳號ID : {data.get("localID")}.'))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Money  : {data.get("money")}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'綠鈔   : {data.get("money")}.'))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Coins  : {data.get("coin")}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'C幣    : {data.get("coin")}.'))
             
         else:
             print(Colorate.Horizontal(Colors.rainbow, '! ERROR: new accounts most be signed-in to the game at least once !.'))
@@ -87,7 +87,7 @@ def load_key_data(cpm):
     
     print(Colorate.Horizontal(Colors.rainbow, f'Telegram ID: {data.get("telegram_id")}.'))
     
-    print(Colorate.Horizontal(Colors.rainbow, f'Balance $  : {(data.get("coins") if not data.get("is_unlimited") else "Unlimited")}.'))
+    print(Colorate.Horizontal(Colors.rainbow, f'代幣 $     : {(data.get("coins") if not data.get("is_unlimited") else "Unlimited")}.'))
         
     
 
@@ -105,7 +105,7 @@ def load_client_details():
     print(Colorate.Horizontal(Colors.rainbow, '=============[ 𝐋𝐎𝐂𝐀𝐓𝐈𝐎𝐍 ]============='))
     print(Colorate.Horizontal(Colors.rainbow, f'Ip Address : {data.get("query")}.'))
     print(Colorate.Horizontal(Colors.rainbow, f'Location   : {data.get("city")} {data.get("regionName")} {data.get("countryCode")}.'))
-    print(Colorate.Horizontal(Colors.rainbow, f'Country    : {data.get("country")} {data.get("zip")}.'))
+    print(Colorate.Horizontal(Colors.rainbow, f'國家       : {data.get("country")} {data.get("zip")}.'))
     print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐌𝐄𝐍𝐔 ]==============='))
 
 def interpolate_color(start_color, end_color, fraction):
@@ -189,12 +189,12 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{24}: 更改勝利場次             1K'))
             print(Colorate.Horizontal(Colors.rainbow, '{25}: 更改輸場次               1K'))
             print(Colorate.Horizontal(Colors.rainbow, '{26}: 複製帳號                 7K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{27}: 請勿使用                     2.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{27}: 請勿使用                 2.5k'))
             print(Colorate.Horizontal(Colors.rainbow, '{28}: 自訂轉向角               1.5k'))
             print(Colorate.Horizontal(Colors.rainbow, '{29}: 自訂 HP                  2.5K')) 
-            print(Colorate.Horizontal(Colors.rainbow, '{30}: 輪胎燃燒程度(測試中請勿使用）             1.5K')) 
-            print(Colorate.Horizontal(Colors.rainbow, '{31}: 修改車里程數(測試中請勿使用）             2K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{32}: 修改車輛煞車(測試中請勿使用）             2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{30}: 輪胎燃燒程度(測試中請勿使用）               1.5K')) 
+            print(Colorate.Horizontal(Colors.rainbow, '{31}: 修改車里程數(測試中請勿使用）               2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{32}: 修改車輛煞車(測試中請勿使用）               2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{33}: 更改目前遊戲帳號綁定的Gmail(測試中請勿使用） 2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
