@@ -39,7 +39,7 @@ def gradient_text(text, colors):
 
 def banner(console):
     os.system('cls' if os.name == 'nt' else 'clear')
-    brand_name =  "Car Parking Multiplayer 1 RMSTUDIO Tool - @ryderchang666"
+    brand_name =  "Car Parking Multiplayer 1 Tool - @ryderchang666"
     colors = [
         "rgb(255,0,0)", "rgb(255,69,0)", "rgb(255,140,0)", "rgb(255,215,0)", "rgb(173,255,47)", 
         "rgb(0,255,0)", "rgb(0,255,255)", "rgb(0,191,255)", "rgb(0,0,255)", "rgb(139,0,255)",
@@ -47,11 +47,11 @@ def banner(console):
     ]
     colorful_text = gradient_text(brand_name, colors)
     console.print(colorful_text)
-    print(Colorate.Horizontal(Colors.rainbow, '=================================================================='))
+    print(Colorate.Horizontal(Colors.rainbow, '======================================================='))
     print(Colorate.Horizontal(Colors.rainbow, '\t         在帳號登入腳本前請先在CPM1登出帳號'))
-    print(Colorate.Horizontal(Colors.rainbow, '    密鑰僅可在一個裝置登入使用 分享密鑰不被允許'))
-    print(Colorate.Horizontal(Colors.rainbow, f' ‌           𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦: @{__CHANNEL_USERNAME__} 𝐎𝐫 @{__GROUP_USERNAME__}'))
-    print(Colorate.Horizontal(Colors.rainbow, '=================================================================='))
+    print(Colorate.Horizontal(Colors.rainbow, '    密鑰僅可在一個裝置登入使用 分享密鑰不被允許'))[/bold]")
+    print(Colorate.Horizontal(Colors.rainbow, f' ‌   𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦: @{__CHANNEL_USERNAME__} 𝐎𝐫 @{__GROUP_USERNAME__}'))("\n")
+    print(Colorate.Horizontal(Colors.rainbow, '======================================================='))
 
 def load_player_data(cpm):
     response = cpm.get_player_data()
