@@ -49,7 +49,7 @@ def banner(console):
     console.print(colorful_text)
     print(Colorate.Horizontal(Colors.rainbow, '======================================================='))
     print(Colorate.Horizontal(Colors.rainbow, '\t         在帳號登入腳本前請先在CPM1登出帳號'))
-    print(Colorate.Horizontal(Colors.rainbow, '    密鑰僅可在一個裝置登入使用 分享密鑰不被允許'))[/bold]")
+    print(Colorate.Horizontal(Colors.rainbow, '    密鑰僅可在一個裝置登入使用 分享密鑰不被允許'))
     print(Colorate.Horizontal(Colors.rainbow, f' ‌   𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦: @{__CHANNEL_USERNAME__} 𝐎𝐫 @{__GROUP_USERNAME__}'))("\n")
     print(Colorate.Horizontal(Colors.rainbow, '======================================================='))
 
