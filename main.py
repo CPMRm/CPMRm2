@@ -188,14 +188,14 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{23}: 解鎖全女生衣服           3K'))
             print(Colorate.Horizontal(Colors.rainbow, '{24}: 更改勝利場次             1K'))
             print(Colorate.Horizontal(Colors.rainbow, '{25}: 更改輸場次               1K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{26}: 複製帳號                 7K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{27}: 請勿使用                 2.5k'))
-            print(Colorate.Horizontal(Colors.rainbow, '{28}: 自訂轉向角               1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{26}: 複製帳號                 7K')) 
+            print(Colorate.Horizontal(Colors.rainbow, '{27}: 請勿使用                 2.5k')) 
+            print(Colorate.Horizontal(Colors.rainbow, '{28}: 自訂轉向角               1.5k'))  
             print(Colorate.Horizontal(Colors.rainbow, '{29}: 自訂 HP                  2.5K')) 
-            print(Colorate.Horizontal(Colors.rainbow, '{30}: 輪胎燃燒程度(測試中請勿使用）               1.5K')) 
-            print(Colorate.Horizontal(Colors.rainbow, '{31}: 修改車里程數(測試中請勿使用）               2K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{32}: 修改車輛煞車(測試中請勿使用）               2K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{33}: 更改目前遊戲帳號綁定的Gmail(測試中請勿使用） 2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{30}: 修改車里程數(測試中請勿使用）               2K')) 
+            print(Colorate.Horizontal(Colors.rainbow, '{31}: 修改車輛煞車(測試中請勿使用）               2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{32}: 更改目前遊戲帳號綁定的Gmail(測試中請勿使用） 2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{33}: 輪胎燃燒程度(測試中請勿使用）               1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
@@ -665,7 +665,7 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
                     sleep(2)
                     continue
-            elif service == 30: # 輪胎燃燒
+            elif service == : # 輪胎燃燒
                 print(Colorate.Horizontal(Colors.rainbow, '[!] ENTER CAR DETALIS'))
                 car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
                 print(Colorate.Horizontal(Colors.rainbow, '[!] ENTER PERCENTAGE'))
@@ -681,7 +681,7 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, 'PLEASE TRY AGAIN'))
                     sleep(2)
                     continue
-            elif service == 31: # 里程數
+            elif service == 30: # 里程數
                 console.print("[bold]ENTER CAR DETAILS![/bold]")
                 car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
                 console.print("[bold]ENTER NEW MILLAGE![/bold]")
@@ -697,7 +697,7 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, 'PLEASE TRY AGAIN'))
                     sleep(2)
                     continue
-            elif service == 32: # 煞車
+            elif service == 31: # 煞車
                 console.print("[bold]ENTER CAR DETAILS![/bold]")
                 car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
                 console.print("[bold]ENTER NEW BRAKE![/bold]")
@@ -713,7 +713,7 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, 'PLEASE TRY AGAIN'))
                     sleep(2)
                     continue
-            elif service == 33:
+            elif service == 32:#change email
                 console.print("[bold]Enter New Email![/bold]")
                 new_email = prompt_valid_value("[bold cyan][?] Account New Email[/bold cyan]", "Email", password=False)
                 console.print(
