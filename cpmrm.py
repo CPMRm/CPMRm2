@@ -369,9 +369,31 @@ class CPMRm:
         response = requests.post(f"{__ENDPOINT_URL__}/telmunnongonz", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
+    
     def telmunnongodz(self, car_id, custom):
         payload = { "account_auth": self.auth_token, "car_id": car_id, "custom": custom }
         params = { "key": self.access_key, "car_id": car_id, "custom": custom }
         response = requests.post(f"{__ENDPOINT_URL__}/telmunnongodz", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def shittin(self):
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/shittin", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def rear_bumper(self, car_id):
+        payload = { "account_auth": self.auth_token, "car_id": car_id }
+        params = { "key": self.access_key, "car_id": car_id }
+        response = requests.post(f"{__ENDPOINT_URL__}/rear_bumper", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def front_bumper(self, car_id):
+        payload = { "account_auth": self.auth_token, "car_id": car_id }
+        params = { "key": self.access_key, "car_id": car_id }
+        response = requests.post(f"{__ENDPOINT_URL__}/front_bumper", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
