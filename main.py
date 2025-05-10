@@ -735,7 +735,7 @@ if __name__ == "__main__":
                     console.print("[bold]EMAIL IS ALREADY REGISTERED[/bold]")
                     sleep(2)
                     continue
-             elif service == 34:
+         elif service == 34:
                 console.print("[bold]Enter New Password![/bold]")
                 new_password = prompt_valid_value("[bold][?] Account New Password[/bold]", "Password", password=False)
                 console.print("[bold red][%] Changing Password [/bold red]: ", end=None)
