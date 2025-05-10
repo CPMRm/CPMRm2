@@ -162,7 +162,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33", "34", "35"]
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33", "34", "35", "36"]
             print(Colorate.Horizontal(Colors.rainbow, '{01}: 增加綠鈔                 1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{02}: 增加C幣                  4.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{03}: 皇冠等級                 8K'))
@@ -182,7 +182,7 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{17}: 解鎖無限油               3K'))
             print(Colorate.Horizontal(Colors.rainbow, '{18}: 解鎖豪宅                 4K'))
             print(Colorate.Horizontal(Colors.rainbow, '{19}: 解鎖車煙                 4K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{20}: 解鎖儲值輪框             4K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{20}: 解鎖C幣輪框              4K'))
             print(Colorate.Horizontal(Colors.rainbow, '{21}: 解鎖全動作               2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{22}: 解鎖全男生衣服           3K'))
             print(Colorate.Horizontal(Colors.rainbow, '{23}: 解鎖全女生衣服           3K'))
@@ -198,6 +198,7 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{33}: 輪胎燃燒程度              1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{34}: 更改目前遊戲帳號的密碼      2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{35}: 安裝車輛外掛套件           10K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{36}: 安裝車輛外掛尾翼           10K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
@@ -757,6 +758,22 @@ if __name__ == "__main__":
                 custom = IntPrompt.ask("[bold blue][?]INSERT BODYKIT ID[/bold blue]")                
                 console.print("[bold red][%] SAVING YOUR DATA [/bold red]: ", end=None)
                 if cpm.telmunnongonz(car_id, custom):
+                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    answ = Prompt.ask("[bold][?] DO YOU WANT TO EXIT[/bold] ?", choices=["y", "n"], default="n")
+                    if answ == "y": console.print("[bold white] Thank You for using my tool[/bold white]")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED[/bold red]")
+                    console.print("[bold red]Please Try Again[/bold red]")
+                    sleep(2)
+                    continue
+            elif service == 36: # 外掛尾翼
+                console.print("[bold]ENTER CAR DETAILS![/bold]")
+                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
+                console.print("[bold]ENTER SPOILER ID![/bold]")
+                custom = IntPrompt.ask("[bold blue][?]ENTER NEW SPOILER ID[/bold blue]")                
+                console.print("[bold red][%] SAVING YOUR DATA [/bold red]: ", end=None)
+                if cpm.telmunnongodz(car_id, custom):
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                     answ = Prompt.ask("[bold][?] DO YOU WANT TO EXIT[/bold] ?", choices=["y", "n"], default="n")
                     if answ == "y": console.print("[bold white] Thank You for using my tool[/bold white]")
