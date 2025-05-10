@@ -199,10 +199,10 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{34}: 更改目前遊戲帳號的密碼      2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{35}: 安裝車輛外掛套件           10K'))
             print(Colorate.Horizontal(Colors.rainbow, '{36}: 安裝車輛外掛尾翼           10K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{37}: 解鎖儲值輪框              10K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{38}: 拆除車輛後保險桿           10K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{39}: 拆除車輛前保險桿           10K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{40}: 用車輛id解鎖車輛           10K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{37}: 解鎖儲值輪框               4.5K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{38}: 拆除車輛後保險桿           2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{39}: 拆除車輛前保險桿           2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{40}: 用車輛id解鎖車輛           1K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
@@ -828,7 +828,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 40: # telmunnongodz
+            elif service == 40: # 解鎖車用id
                 console.print("[bold]ENTER CAR DETAILS![/bold]")
                 car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
                 console.print("[bold red][%] SAVING YOUR DATA [/bold red]: ", end=None)
