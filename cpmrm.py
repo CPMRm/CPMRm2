@@ -368,5 +368,5 @@ class CPMRm:
         params = { "key": self.access_key, "car_id": car_id, "custom": custom }
         response = requests.post(f"{__ENDPOINT_URL__}/telmunnongonz", params=params, data=payload)
         response_decoded = response.json()
-        return response_decoded.get("ok"
+        return response_decoded.get("ok")
    
