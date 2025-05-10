@@ -202,7 +202,7 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{37}: 解鎖儲值輪框               4.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{38}: 拆除車輛後保險桿           2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{39}: 拆除車輛前保險桿           2K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{40}: 用車輛id解鎖車輛           1K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{40}: 解鎖豐田皇冠車             2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
@@ -828,21 +828,20 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 40: # 解鎖車用id
-                console.print("[bold]ENTER CAR DETAILS![/bold]")
-                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
-                console.print("[bold red][%] SAVING YOUR DATA [/bold red]: ", end=None)
-                if cpm.unlock_car_by_id(car_id):
+            elif service == 40: # Unlock toyota crown
+                console.print("[!] Note: this function takes a while to complete, please don't cancel.", end=None)
+                console.print("[%] Unlocking Toyota Crown: ", end=None)
+                if cpm.unlock_crown():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    answ = Prompt.ask("[bold][?] DO YOU WANT TO EXIT[/bold] ?", choices=["y", "n"], default="n")
+                    console.print("[bold green]======================================[/bold green]")
+                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
                     if answ == "y": console.print("[bold white] Thank You for using my tool[/bold white]")
                     else: continue
                 else:
                     console.print("[bold red]FAILED[/bold red]")
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
-                    continue
-                    
+                    continue    
             else: continue
             break
         break
