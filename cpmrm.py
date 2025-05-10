@@ -398,9 +398,9 @@ class CPMRm:
         response_decoded = response.json()
         return response_decoded.get("ok")
     
-    def unlock_car_by_id(self, car_id: int) -> bool:
-        payload = { "account_auth": self.auth_token, "car_id": car_id }
-        params = { "key": self.access_key, "car_id": car_id }
-        response = requests.post(f"{__ENDPOINT_URL__}/unlock_car_by_id", params=params, data=payload)
+    def unlock_crown(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_crown", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
