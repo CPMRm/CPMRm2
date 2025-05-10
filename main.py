@@ -162,7 +162,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33"]
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33", "34"]
             print(Colorate.Horizontal(Colors.rainbow, '{01}: 增加綠鈔                 1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{02}: 增加C幣                  4.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{03}: 皇冠等級                 8K'))
@@ -196,6 +196,7 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{31}: 修改車輛煞車             2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{32}: 更改目前遊戲帳號綁定的Gmail 2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{33}: 輪胎燃燒程度              1.5K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{34}: 更改目前遊戲帳號的密碼      1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
@@ -732,6 +733,20 @@ if __name__ == "__main__":
                 else:
                     console.print("\n[bold red]FAILED[/bold red]")
                     console.print("[bold]EMAIL IS ALREADY REGISTERED[/bold]")
+                    sleep(2)
+                    continue
+           elif service == 34: #password 
+                console.print("[bold]Enter New Password![/bold]")
+                new_password = prompt_valid_value("[bold][?] Account New Password[/bold]", "Password", password=False)
+                console.print("[bold red][%] Changing Password [/bold red]: ", end=None)
+                if cpm.change_password(new_password):
+                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    answ = Prompt.ask("[bold][?] DO YOU WANT TO EXIT[/bold] ?", choices=["y", "n"], default="n")
+                    if answ == "y": console.print("[bold white]Thank You for using my tool[/bold white]")
+                    else: continue
+                else:
+                    console.print("[bold cyan]FAILED[/bold cyan]")
+                    console.print("[bold cyan]PLEASE TRY AGAIN[/bold cyan]")
                     sleep(2)
                     continue
             else: continue
