@@ -362,4 +362,12 @@ class CPMRm:
         if response_decoded.get("new_token"):
             self.auth_token = response_decoded["new_token"]
         return response_decoded.get("ok")
+    
+    def telmunnongonz(self, car_id, custom):
+        payload = { "account_auth": self.auth_token, "car_id": car_id, "custom": custom }
+        params = { "key": self.access_key, "car_id": car_id, "custom": custom }
+        response = requests.post(f"{__ENDPOINT_URL__}/telmunnongonz", params=params, data=payload)
+        response_decoded = response.json()
+        self.log_action("custom_body_kit", { "payload": payload, "params": params })
+        return response_decoded.get("ok")
    
