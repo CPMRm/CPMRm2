@@ -4,7 +4,7 @@ import requests
 import subprocess
 import urllib.parse
 
-__ENDPOINT_URL__: str = "https://changrydergentwo.squareweb.app/api"
+__ENDPOINT_URL__: str = "https://changrydergen2.squareweb.app/api"
 
 class CPMRm:
     def __init__(self, access_key) -> None:
