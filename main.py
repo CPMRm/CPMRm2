@@ -204,7 +204,7 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{39}: 拆除車輛前保險桿           2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{40}: 解鎖豐田皇冠車             2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{41}: 移除男性角色頭部           3K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{42}: 移植女性角色頭部           3K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{42}: 移除女性角色頭部           3K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
