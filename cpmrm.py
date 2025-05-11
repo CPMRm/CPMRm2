@@ -404,3 +404,17 @@ class CPMRm:
         response = requests.post(f"{__ENDPOINT_URL__}/unlock_crown", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
+
+    def rmhm(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/rmhm", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def rmhfm(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/rmhfm", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
