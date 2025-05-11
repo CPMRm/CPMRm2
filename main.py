@@ -162,7 +162,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"]
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42"]
             print(Colorate.Horizontal(Colors.rainbow, '{01}: 增加綠鈔                 1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{02}: 增加C幣                  4.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{03}: 皇冠等級                 8K'))
@@ -203,6 +203,8 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{38}: 拆除車輛後保險桿           2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{39}: 拆除車輛前保險桿           2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{40}: 解鎖豐田皇冠車             2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{41}: 移除男性角色頭部           3K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{42}: 移植女性角色頭部           3K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
@@ -841,7 +843,33 @@ if __name__ == "__main__":
                     console.print("[bold red]FAILED[/bold red]")
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
-                    continue    
+                    continue
+            elif service == 41: # remove head male
+                console.print("[%] Removing Male head: ", end=None)
+                if cpm.rmhm():
+                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]======================================[/bold green]")
+                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                    if answ == "y": console.print("[bold white] Thank You for using my tool[/bold white]")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED[/bold red]")
+                    console.print("[bold red]Please Try Again[/bold red]")
+                    sleep(2)
+                    continue
+            elif service == 42: # remove head female
+                console.print("[%] Removing Female Head: ", end=None)
+                if cpm.rmhfm():
+                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]======================================[/bold green]")
+                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                    if answ == "y": console.print("[bold white] Thank You for using my tool[/bold white]")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED[/bold red]")
+                    console.print("[bold red]Please Try Again[/bold red]")
+                    sleep(2)
+                    continue
             else: continue
             break
         break
