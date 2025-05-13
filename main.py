@@ -903,7 +903,7 @@ if __name__ == "__main__":
                         console.print("[bold red]Not found[/bold red]")
                         sleep(2)
                         continue
-             elif service == 55: # Unlock All Levels
+            elif service == 44: # Unlock All Levels
                 console.print("[%] Unlocking All Levels: ", end=None)
                 if cpm.levels():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
