@@ -162,7 +162,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42"]
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43"]
             print(Colorate.Horizontal(Colors.rainbow, '{01}: 增加綠鈔                 1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{02}: 增加C幣                  4.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{03}: 皇冠等級                 8K'))
@@ -205,6 +205,7 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{40}: 解鎖豐田皇冠車             2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{41}: 移除男性角色頭部           3K'))
             print(Colorate.Horizontal(Colors.rainbow, '{42}: 移除女性角色頭部           3K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{43}: 車輛資訊(用車輛id查看      免費'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
@@ -870,6 +871,37 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
+            elif service == 43:  # Car Info Service
+                console.print("[bold cyan][!] Car Info Lookup[/bold cyan]")
+                car_id = IntPrompt.ask("[bold][?]Enter Car ID[/bold]")
+                car = cpm.car_info(car_id)
+                if car:
+                    if car.get("ok"):
+                        console.print("[bold][red]========[/red][ CAR INFORMATION ][red]========[/red][/bold]")
+                        console.print(f"[bold white]   >> Car ID           : {car.get('id')}[/bold white]")
+                        console.print(f"[bold white]   >> Spoiler          : {car.get('sp')}[/bold white]")
+                        console.print(f"[bold white]   >> HP               : {car.get('hp')} ({car.get('ihp')})[/bold white]")
+                        console.print(f"[bold white]   >> NM               : {car.get('nm')} ({car.get('tq')})[/bold white]")
+                        console.print(f"[bold white]   >> Front Bumper     : {car.get('fb')}[/bold white]")
+                        console.print(f"[bold white]   >> Rear Bumper      : {car.get('rb')}[/bold white]")
+                        console.print(f"[bold white]   >> Bodykit          : {car.get('bk')}[/bold white]")
+                        console.print(f"[bold white]   >> Incline Rear     : {car.get('ir')}[/bold white]")
+                        console.print(f"[bold white]   >> Incline Front    : {car.get('if')}[/bold white]")
+                        console.print(f"[bold white]   >> Steering Angle   : {car.get('ang')}[/bold white]")
+                        console.print(f"[bold white]   >> Wheel Percentage : {car.get('wtp')}[/bold white]")
+                        console.print(f"[bold white]   >> Mileage (km)     : {car.get('km')}[/bold white]")
+                        console.print(f"[bold white]   >> Wheel Front      : {car.get('wf')}[/bold white]")
+                        console.print(f"[bold white]   >> Wheel Rear       : {car.get('wr')}[/bold white]")
+                        console.print(f"[bold white]   >> Police Unlock    : {car.get('pol')}[/bold white]")
+                        console.print(f"[bold white]   >> Tyre             : {car.get('tr')}[/bold white]")
+                        answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                        if answ == "y": console.print("[bold white] Thank You for using my tool[/bold white]")
+                        else: continue
+                    else:
+                        console.print("[bold red]FAILED[/bold red]")
+                        console.print("[bold red]Not found[/bold red]")
+                        sleep(2)
+                        continue
             else: continue
             break
         break
