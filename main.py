@@ -162,7 +162,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44"]
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ,"29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45"]
             print(Colorate.Horizontal(Colors.rainbow, '{01}: 增加綠鈔                 1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{02}: 增加C幣                  4.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{03}: 皇冠等級                 8K'))
@@ -207,6 +207,7 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{42}: 移除女性角色頭部           3K'))
             print(Colorate.Horizontal(Colors.rainbow, '{43}: 車輛資訊(用車輛id查看      免費'))
             print(Colorate.Horizontal(Colors.rainbow, '{44}: 完成全部停車關卡           1K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{45}: 鍍金車身(用車輛id)         3K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
@@ -909,6 +910,21 @@ if __name__ == "__main__":
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                     console.print("[bold green]======================================[/bold green]")
                     answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                    if answ == "y": console.print("[bold white] Thank You for using my tool[/bold white]")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED[/bold red]")
+                    console.print("[bold red]Please Try Again[/bold red]")
+                    sleep(2)
+                    continue
+            elif service == 45: # 鍍金車
+                console.print("[bold]ENTER CAR DETAILS![/bold]")
+                car_id = IntPrompt.ask("[bold][?] CAR ID [/bold]")
+                custom = IntPrompt.ask("[bold][?] VALUE [/bold]")
+                console.print("[bold red][%] PROCESSING.... [/bold red]: ", end=None)
+                if cpm.telmnisgay(car_id, custom):
+                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    answ = Prompt.ask("[bold][?] DO YOU WANT TO EXIT[/bold] ?", choices=["y", "n"], default="n")
                     if answ == "y": console.print("[bold white] Thank You for using my tool[/bold white]")
                     else: continue
                 else:
