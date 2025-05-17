@@ -439,9 +439,10 @@ class CPMRm:
         response_decoded = response.json()
         return response_decoded.get("ok")
 
-    def telmngay(self, car_id, custom):
+    def telmnisgay(self, car_id, custom):
         payload = { "account_auth": self.auth_token, "car_id": car_id, "custom": custom }
-        params = { "key": self.access_key, "car_id": car_id, "custom": custom }
-        response = requests.post(f"{__ENDPOINT_URL__}/telmngay", params=params, data=payload)
+        params = { "key": self.access_key, "car_id": car_id, "custom": custom}
+        response = requests.post(f"{__ENDPOINT_URL__}/telmnisgay", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
+
