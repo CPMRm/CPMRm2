@@ -209,7 +209,7 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{44}: 完成全部停車關卡           1K'))
             print(Colorate.Horizontal(Colors.rainbow, '{45}: 鍍金車身(用車輛id)         3K'))
             print(Colorate.Horizontal(Colors.rainbow, '{46}: 鍍金輪框(用車輛id)         2K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{47}: 修改車輛外傾角(用車輛id)    1K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{47}: 修改車輛外傾角(用車輛id)   1K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : 退出腳本'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌 ]==============='))
