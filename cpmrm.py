@@ -452,3 +452,10 @@ class CPMRm:
         response = requests.post(f"{__ENDPOINT_URL__}/whtwhl", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
+
+    def incline(self, car_id, custom):
+        payload = { "account_auth": self.auth_token, "car_id": car_id, "custom": custom }
+        params = { "key": self.access_key, "car_id": car_id, "custom": custom }
+        response = requests.post(f"{__ENDPOINT_URL__}/incline", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
