@@ -131,7 +131,7 @@ if __name__ == "__main__":
     while True:
         banner(console)
         acc_email = prompt_valid_value("[bold][?] 帳號Gmail[/bold]", "Email", password=False)
-        acc_password = prompt_valid_value("[bold][?] 帳號密碼[/bold]", "Password", password=False)
+        acc_password = prompt_valid_value("[bold][?] 密碼[/bold]", "Password", password=False)
         acc_access_key = prompt_valid_value("[bold][?] 密鑰[/bold]", "Access Key", password=False)
         console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
         cpm = CPMRm(acc_access_key)
