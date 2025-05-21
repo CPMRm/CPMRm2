@@ -130,9 +130,9 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
     while True:
         banner(console)
-        acc_email = prompt_valid_value("[bold][?] Account Email[/bold]", "Email", password=False)
-        acc_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
-        acc_access_key = prompt_valid_value("[bold][?] Access Key[/bold]", "Access Key", password=False)
+        acc_email = prompt_valid_value("[bold][?] 帳號Gmail[/bold]", "Email", password=False)
+        acc_password = prompt_valid_value("[bold][?] 帳號密碼[/bold]", "Password", password=False)
+        acc_access_key = prompt_valid_value("[bold][?] 密鑰[/bold]", "Access Key", password=False)
         console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
         cpm = CPMRm(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
