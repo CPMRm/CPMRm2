@@ -70,7 +70,8 @@ def load_player_data(cpm):
             print(Colorate.Horizontal(Colors.rainbow, f'C幣    : {data.get("coin")}.'))
 
             print(Colorate.Horizontal(Colors.rainbow, f'車輛    : {data.get("car")}.'))
-            print(Colorate.Horizontal(Colors.rainbow, f'好友    : {data.get("friends")}.'))
+            
+            print(Colorate.Horizontal(Colors.rainbow, f'好友    : {data.get("friend")}.'))
             
         else:
             print(Colorate.Horizontal(Colors.rainbow, '! ERROR: new accounts most be signed-in to the game at least once !.'))
