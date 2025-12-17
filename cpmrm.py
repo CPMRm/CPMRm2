@@ -119,7 +119,7 @@ class CPMRm:
             "amount": amount
         }
         params = { "key": self.access_key }
-        response = requests.post(f"{__ENDPOINT_URL__}/set_money", params=params, data=payload)
+        response = requests.post(f"{__ENDPOINT_URL__}/set_money", params=params, json=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
     
@@ -459,3 +459,4 @@ class CPMRm:
         response = requests.post(f"{__ENDPOINT_URL__}/incline", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
+
