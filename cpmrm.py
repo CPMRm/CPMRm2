@@ -3,6 +3,7 @@ import os
 import requests
 import subprocess
 import urllib.parse
+import json
 
 __ENDPOINT_URL__: str = "https://changrydergen2.squareweb.app/api"
 
@@ -459,4 +460,5 @@ class CPMRm:
         response = requests.post(f"{__ENDPOINT_URL__}/incline", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
+
 
